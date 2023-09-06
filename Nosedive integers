@@ -1,0 +1,46 @@
+import java.util.*;
+class sum
+{
+public static void main(String args[])
+{
+double sum =0;
+int n,i;
+Scanner sc = new Scanner(System.in);
+System.out.println("enter the number of element");
+n=sc.nextInt();
+int a[] = new int [n];
+ System.out.println("enter the elemnt ");
+for(i=0;i<n;i++)
+{
+a[i]=sc.nextInt();
+try
+{
+if(a[i]<0)
+{
+throw new Exception("negative number are not allowed enter positive number");
+}
+else
+{
+sum+=a[i];
+}
+}
+catch(Exception ex)
+{
+System.out.println(ex.getMessage());
+Scanner sc1 = new Scanner(System.in);
+System.out.println("enter positive number");
+int input = sc1.nextInt();
+if(input>=0)
+{
+sum+=input;
+}
+else
+{
+i--;
+}
+}
+}
+double avg = sum/n;
+System.out.println("average of numbers is :" +avg);
+}
+}
